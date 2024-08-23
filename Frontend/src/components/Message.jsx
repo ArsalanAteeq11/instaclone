@@ -15,7 +15,6 @@ const Message = ({ selectedUser }) => {
   const messageEndRef = useRef(null);
 
   useEffect(() => {
-    // Scroll to the bottom of the message list when messages change
     if (messageEndRef.current) {
       messageEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
