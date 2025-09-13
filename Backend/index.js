@@ -11,7 +11,7 @@ import path from "path";
 
 dotenv.config({});
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8080;
 
 const __dirname = path.resolve();
 console.log(__dirname);
@@ -25,7 +25,7 @@ app.use(
   })
 );
 const corsOption = {
-  origin: "http://localhost:5173",
+  origin: "http://localhost:5174",
   credentials: true,
 };
 app.use(cors(corsOption));

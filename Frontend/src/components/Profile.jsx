@@ -97,10 +97,10 @@ const Profile = () => {
                       Follow
                     </Button>
                   )}
-                  <Link to='/chat'>
-                  <Button variant="secondary" className="h-9 cursor-pointer">
-                    Message
-                  </Button>
+                  <Link to="/chat">
+                    <Button variant="secondary" className="h-9 cursor-pointer">
+                      Message
+                    </Button>
                   </Link>
                 </>
               )}
@@ -169,7 +169,11 @@ const Profile = () => {
                 {displayedPost?.length === 0 ? (
                   <div className="flex items-center justify-center mt-14 ml-30">
                     <div className="flex flex-col items-center justify-center">
-                      <img className="w-30 h-30" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRYG_p-6wUBUpSzEVjkLpw1l3FKjk2VKirKV8qAY89SVkiRk6TD" alt="" />
+                      <img
+                        className="w-30 h-30"
+                        src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRYG_p-6wUBUpSzEVjkLpw1l3FKjk2VKirKV8qAY89SVkiRk6TD"
+                        alt=""
+                      />
                       <h1 className="text-4xl font-extrabold">No Posts Yet</h1>
                     </div>
                   </div>
@@ -177,29 +181,25 @@ const Profile = () => {
                   displayedPost?.map((post) => {
                     return (
                       <div key={post?._id} className="grid grid-cols-3 gap-1">
-
-                      <div
-                        
-                        className="relative group cursor-pointer "
-                      >
-                        <img
-                          src={post?.image}
-                          alt=""
-                          className="rounded-sm w-full object-cover aspect-square my-2 "
-                        />
-                        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <div className="flex items-center text-white space-x-4">
-                            <button className="flex items-center gap-2 hover:text-gray-300">
-                              <FaHeart />
-                              <span>{post?.likes?.length}</span>
-                            </button>
-                            <button className="flex items-center gap-2 hover:text-gray-300">
-                              <MessageCircle size={"19px"} />
-                              <span>{post?.comments?.length}</span>
-                            </button>
+                        <div className="relative group cursor-pointer ">
+                          <img
+                            src={post?.image}
+                            alt=""
+                            className="rounded-sm w-full object-cover aspect-square my-2 "
+                          />
+                          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div className="flex items-center text-white space-x-4">
+                              <button className="flex items-center gap-2 hover:text-gray-300">
+                                <FaHeart />
+                                <span>{post?.likes?.length}</span>
+                              </button>
+                              <button className="flex items-center gap-2 hover:text-gray-300">
+                                <MessageCircle size={"19px"} />
+                                <span>{post?.comments?.length}</span>
+                              </button>
+                            </div>
                           </div>
                         </div>
-                      </div>
                       </div>
                     );
                   })
